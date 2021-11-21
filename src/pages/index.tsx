@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { BodyMain } from '../components/Home'
 import { stripe } from '../services/stripe'
 
-
 interface HomeProps {
   product:{
     priceId:string;
@@ -23,7 +22,6 @@ export default function Home({product} : HomeProps) {
     </>
   )
 }
-
 
 export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve('price_1Jw4VtCgrVsQ6l6lvQ1ecNaQ')
